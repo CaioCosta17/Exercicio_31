@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components'
+
+import ListaContatos from './containers/ListaContatos/index'
+import Filtro from './containers/Filtro/index'
+import Formulario from './containers/Formulario/index'
+
+import { cores } from './styles/colors'
+import { EstiloGlobal } from './styles'
+
+const Container = styled.div`
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+`
+
+const Titulo = styled.h1`
+  text-align: center;
+  color: ${cores.principal};
+  margin-bottom: 32px;
+  font-size: 36px;
+`
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <EstiloGlobal />
+      <Container>
+        <Titulo>Lista de Contatos</Titulo>
+        <Filtro />
+        <Formulario />
+        <ListaContatos />
+      </Container>
+    </>
+  )
 }
 
-export default App;
+export default App
